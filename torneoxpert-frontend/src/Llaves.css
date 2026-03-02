@@ -1,0 +1,849 @@
+/* Llaves.css - VERSIÓN COMPLETA */
+/* 🆕 ESTILOS PARA MODAL DE COMBATE */
+.estadisticas-combate {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #e9ecef;
+}
+
+.estadisticas-combate h4 {
+  margin-bottom: 10px;
+  color: #495057;
+  font-size: 16px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.stat-item {
+  background: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  font-size: 14px;
+}
+
+.filtros-combate {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filtro-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filtro-group label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+}
+
+.boton-warning {
+  background-color: #ffc107;
+  color: #212529;
+  border: 1px solid #ffc107;
+}
+
+.boton-warning:hover:not(:disabled) {
+  background-color: #e0a800;
+  border-color: #d39e00;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filtros-combate {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* 🆕 ESTILOS PARA LA FUNCIONALIDAD DE MOVER COMPETIDORES */
+
+.competidores-lista {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.competidores-lista h4 {
+  margin-bottom: 10px;
+  color: #495057;
+  font-size: 16px;
+}
+
+.competidores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.competidor-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.competidor-item span {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.boton-sm {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.boton-warning {
+  background-color: #ffc107;
+  color: #212529;
+  border: 1px solid #ffc107;
+}
+
+.boton-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+}
+
+/* 🆕 ESTILOS PARA EL MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  color: #495057;
+}
+
+.form-group {
+  margin: 15px 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #495057;
+}
+
+.form-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.boton-secondary {
+  background-color: #6c757d;
+  color: white;
+  border: 1px solid #6c757d;
+}
+
+.boton-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .competidores-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .modal-actions button {
+    width: 100%;
+  }
+}
+/* 🟦 MODAL FULLSCREEN */
+.modal-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  
+  /* 🔥 Esto permite CLICS en los elementos hijos */
+  pointer-events: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 95%;
+  max-width: 1400px;
+  max-height: 95vh;
+  overflow-y: auto;
+
+  /* 🔥 Esto hace que SOLO el contenido reciba clics */
+  pointer-events: auto;
+}
+
+
+
+/* 📦 Contenedor del contenido */
+modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 95%;
+  max-width: 1400px;
+  max-height: 95vh;
+  overflow-y: auto;
+
+  /* 🔥 Esto hace que SOLO el contenido reciba clics */
+  pointer-events: auto;
+}
+
+.modal-titulo {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+}
+
+/* ❌ Botón cerrar */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ff4444;
+  border: none;
+  padding: 10px 14px;
+  color: white;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.modal-close:hover {
+  background: #cc0000;
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+============================================ */
+.llaves-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 2px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.llaves-titulo {
+  color: #3498db;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.llaves-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* ============================================
+   LLAVES GUARDADAS (LISTA)
+============================================ */
+.llaves-guardadas {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #dee2e6;
+  width: 100%;
+}
+
+.llaves-guardadas h3 {
+  margin-bottom: 15px;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.3rem;
+}
+
+.lista-llaves {
+  display: grid;
+  gap: 12px;
+}
+
+.llave-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+  flex-wrap: wrap;
+  transition: all 0.2s;
+}
+
+.llave-item:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.nombre-llave {
+  font-weight: bold;
+  min-width: 200px;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.estado {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.estado.finalizado {
+  background: #d4edda;
+  color: #155724;
+}
+
+.estado.en-progreso {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* ============================================
+   ESTADO VACÍO
+============================================ */
+.llaves-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  border: 2px dashed #ddd;
+  width: 100%;
+}
+
+.llaves-empty p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.llaves-empty small {
+  color: #999;
+  font-size: 14px;
+}
+
+/* ============================================
+   CARDS DE LLAVES
+============================================ */
+.llaves-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.llave-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.llave-header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.llave-header-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.estado-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.estado-badge.finalizado {
+  background: #4caf50;
+  color: white;
+}
+
+.estado-badge.en-progreso {
+  background: #ff9800;
+  color: white;
+}
+
+.llave-info {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #666;
+  flex-wrap: wrap;
+}
+
+.llave-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* ============================================
+   GRUPOS Y COMPETIDORES
+============================================ */
+.grupo-container {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grupo-titulo {
+  color: #3498db;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.lista-competidores {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.item-competidor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.item-competidor:hover {
+  transform: translateY(-2px);
+}
+
+.info-competidor {
+  flex: 1;
+  color: #34495e;
+  min-width: 200px;
+}
+
+/* ============================================
+   BOTONES
+============================================ */
+.boton {
+  text-align: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.boton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.boton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.boton-primary {
+  background: #007bff;
+  color: white;
+}
+
+.boton-primary:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.boton-success {
+  background: #4caf50;
+  color: white;
+}
+
+.boton-success:hover:not(:disabled) {
+  background: #388e3c;
+}
+
+.boton-info {
+  background: #17a2b8;
+  color: white;
+}
+
+.boton-info:hover:not(:disabled) {
+  background: #138496;
+}
+
+.boton-peligro {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.boton-peligro:hover:not(:disabled) {
+  background-color: #c0392b;
+}
+
+.boton-primario {
+  background: #3498db;
+  color: white;
+}
+
+.boton-primario:hover:not(:disabled) {
+  background: #2980b9;
+}
+
+.boton-transmitir {
+  background-color: #215821;
+  color: white;
+}
+
+.boton-transmitir:hover:not(:disabled) {
+  background-color: #499137;
+}
+
+.boton-Juez {
+  text-align: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 200px;
+  height: 40px;
+  background-color: #215821;
+  color: white;
+}
+
+.boton-Juez:hover {
+  background-color: #499137;
+}
+
+/* ============================================
+   SELECT TATAMI
+============================================ */
+.select-tatami {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  min-width: 160px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+}
+
+.select-tatami:hover {
+  border-color: #007bff;
+}
+
+.select-tatami:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* ============================================
+   HISTORIAL
+============================================ */
+.historial-toggle {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.historial-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.historial-container {
+  background-color: #bdbdbd;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.historial-titulo {
+  text-align: center;
+  color: #000000;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.lista-historial {
+  list-style: none;
+  padding: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.item-historial {
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #3498db;
+  transition: all 0.2s ease;
+}
+
+.item-historial:hover {
+  transform: translateX(5px);
+}
+
+.item-historial strong {
+  color: #2c3e50;
+}
+
+.item-historial span {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* ============================================
+   LLAVES Y MATCHES
+============================================ */
+.llave-round {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.llave-match {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 0 0.5rem;
+  padding: 1rem 2rem;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: all 0.2s;
+}
+
+.llave-match:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.llave-match.winner {
+  border-color: #4caf50;
+  background: #e8f5e9;
+  font-weight: bold;
+}
+
+.llave-match.loser {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 768px) {
+  .llaves-container {
+    padding: 1rem;
+  }
+
+  .llaves-titulo {
+    font-size: 1.8rem;
+  }
+
+  .llaves-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .llave-header-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .llave-actions {
+    flex-direction: column;
+  }
+
+  .boton, .select-tatami {
+    width: 100%;
+  }
+
+  .nombre-llave {
+    min-width: 100%;
+  }
+
+  .llave-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .item-competidor {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-competidor {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .llave-match {
+    padding: 0.5rem 1rem;
+    min-width: 80px;
+    font-size: 0.9rem;
+  }
+
+  .grupo-titulo {
+    font-size: 1.2rem;
+  }
+}
+
+/* ============================================
+   ANIMACIONES
+============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.llave-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ============================================
+   SCROLLBAR PERSONALIZADO
+============================================ */
+.lista-historial::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lista-historial::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.lista-historial::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.lista-historial::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

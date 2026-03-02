@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Generar Rondas</title>
+</head>
+<body>
+  <h2>Generar Rondas</h2>
+
+  <textarea id="competidores" rows="5" cols="50">
+[{"id":1},{"id":2}]
+  </textarea>
+  <br>
+  <button id="generarBtn">Generar Rondas</button>
+
+  <h3>Resultado:</h3>
+  <pre id="resultado"></pre>
+
+  <script>
+    document.getElementById("generarBtn").addEventListener("click", () => {
+      const competidores = JSON.parse(document.getElementById("competidores").value);
+
+      fetch("https://torneoxpert.digital/api/generar-rondas", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ competidores })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("resultado").textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        document.getElementById("resultado").textContent = "Error: " + err;
+      });
+    });
+  </script>
+</body>
+</html>

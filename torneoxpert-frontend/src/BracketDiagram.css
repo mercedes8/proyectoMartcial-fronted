@@ -1,0 +1,226 @@
+/* BracketDiagram.css - Deportivo Moderno */
+.bracket-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  transform: scale(2.0);
+  transform-origin: center top;
+  position: relative;
+}
+
+.bracket-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00d4ff 0%, #ff006e 50%, #00d4ff 100%);
+  border-radius: 16px 16px 0 0;
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.bracket-header {
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.bracket-header h3 {
+  margin: 0 0 8px 0;
+  color: #ffffff;
+  font-size: 1.4em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.bracket-header small {
+  color: #b0bec5;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bracket-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #90a4ae;
+  font-style: italic;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  border: 2px dashed rgba(255,255,255,0.1);
+}
+
+/* Slots de Bracket - Estilo Deportivo Premium */
+.bracket-box {
+  fill: rgba(255, 255, 255, 0.95);
+  stroke: rgba(255, 255, 255, 0.3);
+  stroke-width: 2;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.bracket-box.blue {
+  fill: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  fill: #1a237e;
+  stroke: #00d4ff;
+  stroke-width: 2.5;
+}
+
+.bracket-box.red {
+  fill: #b71c1c;
+  stroke: #ff006e;
+  stroke-width: 2.5;
+}
+
+.bracket-box.winner {
+  fill: #1b5e20;
+  stroke: #00ff88;
+  stroke-width: 4;
+  filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.4)) 
+          drop-shadow(0 4px 16px rgba(0,0,0,0.3));
+  animation: winnerPulse 2s ease-in-out infinite;
+}
+
+@keyframes winnerPulse {
+  0%, 100% { 
+    stroke-width: 4;
+    filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.4)) 
+            drop-shadow(0 4px 16px rgba(0,0,0,0.3));
+  }
+  50% { 
+    stroke-width: 5;
+    filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.6)) 
+            drop-shadow(0 6px 20px rgba(0,0,0,0.4));
+  }
+}
+
+.bracket-box.final {
+  fill: #e65100;
+  stroke: #ffd600;
+  stroke-width: 4;
+  filter: drop-shadow(0 0 16px rgba(255, 214, 0, 0.5))
+          drop-shadow(0 4px 16px rgba(0,0,0,0.3));
+}
+
+.bracket-box:hover {
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.35))
+          brightness(1.15);
+  stroke-width: 3.5;
+  cursor: pointer;
+}
+
+/* Textos dentro de los slots */
+svg text {
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  fill: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+
+/* Conectores entre rondas */
+svg line,
+svg path {
+  stroke: rgba(255, 255, 255, 0.25);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: all 0.3s ease;
+}
+
+svg line:hover,
+svg path:hover {
+  stroke: rgba(0, 212, 255, 0.6);
+  stroke-width: 4;
+}
+
+/* Headers de columna */
+svg text[text-anchor="middle"] {
+  fill: #ffffff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Botón de deshacer (×) */
+svg circle[fill="#ff4444"] {
+  fill: #d32f2f;
+  filter: drop-shadow(0 2px 6px rgba(211, 47, 47, 0.4));
+  transition: all 0.2s ease;
+}
+
+svg circle[fill="#ff4444"]:hover {
+  fill: #f44336;
+  filter: drop-shadow(0 4px 12px rgba(244, 67, 54, 0.6));
+}
+
+/* Animación para slot actualizado */
+@keyframes slotUpdate {
+  0%, 100% { 
+    stroke-width: 4;
+    stroke-opacity: 0.8;
+  }
+  50% { 
+    stroke-width: 6;
+    stroke-opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bracket-container {
+    padding: 15px;
+    transform: scale(1.5);
+  }
+  
+  .bracket-header {
+    padding: 12px 20px;
+  }
+  
+  .bracket-header h3 {
+    font-size: 1.1em;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bracket-container {
+    transform: scale(1.2);
+  }
+}
+
+.round-column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Efecto de brillo en slots ganadores */
+@keyframes glowWinner {
+  0%, 100% { 
+    filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.3));
+  }
+  50% { 
+    filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.6));
+  }
+}

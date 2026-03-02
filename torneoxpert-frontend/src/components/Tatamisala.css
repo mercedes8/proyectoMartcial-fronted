@@ -1,0 +1,36 @@
+/* TatamiSala.css - Versión Profesional */
+/*.tatami-sala {
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sala-header {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sala-header h1 {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-text-fill-color: transparent;
+}
+
+.sala-info {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.95rem;
+  color: #4a5568;
+  font-weight: 500;
+}*/
+
+/* Switch mejorado */
