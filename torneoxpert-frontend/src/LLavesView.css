@@ -1039,3 +1039,16 @@ select option {
   box-shadow:0 8px 18px rgba(0,0,0,.6);
 
 }
+
+.panel-combate{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:20px;
+
+  margin-top:15px;
+
+}
+
