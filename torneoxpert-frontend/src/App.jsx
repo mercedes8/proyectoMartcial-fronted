@@ -41,7 +41,7 @@ function App() {
         <Route path="/mantenimiento" element={<Maintenance />} />
         <Route path="/" element={<Inicio />} />
         <Route path="/registro11" element={<Registro/>} />
-        <Route path="/subir-escuela" element={<ServicioCerrado />} />
+        <Route path="/subir-escuela" element={<SubirEscuela />} />
         <Route path="/login-instructor" element={<LoginInstructor />} />
         <Route path="/dashboard-instructor" element={<DashboardInstructor />} />
 
@@ -140,9 +140,9 @@ function App() {
         <Route
           path="/escanear"
           element={
-            <ProtectedRoute>
+            
               <EscanearQR />
-            </ProtectedRoute>
+            
           }
         />
         <Route

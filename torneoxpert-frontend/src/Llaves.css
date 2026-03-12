@@ -847,3 +847,70 @@ modal-content {
 .lista-historial::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* ============================= */
+/* MODAL GLOBAL */
+/* ============================= */
+
+.modal-overlay{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100vw;
+  height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(0,0,0,.75);
+
+  z-index:9999;
+
+  backdrop-filter:blur(6px);
+
+}
+
+
+/* contenedor */
+
+.modal-content{
+
+  width:70%;
+  max-width:900px;
+
+  max-height:90vh;
+
+  overflow-y:auto;
+
+  padding:30px;
+
+  border-radius:14px;
+
+  background:#111;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:0 15px 40px rgba(0,0,0,.6);
+
+}
+
+
+/* scroll modal */
+
+.modal-content::-webkit-scrollbar{
+
+  width:6px;
+
+}
+
+.modal-content::-webkit-scrollbar-thumb{
+
+  background:#2f9e44;
+  border-radius:10px;
+
+}
+

@@ -304,6 +304,61 @@ const BracketDiagram = ({ grupo = {}, onAvanzar = () => {}, onDeshacer = () => {
       console.error("onDeshacer error:", err);
     }
   };
+  
+  /* =====================================================
+   🥊 MODO VS CUANDO HAY EXACTAMENTE 2 COMPETIDORES
+   SOLO CAMBIA EL LAYOUT (NO LA LÓGICA)
+===================================================== */
+
+if (grupo.competidores && grupo.competidores.length === 2 && rounds?.[0]?.[0]) {
+
+  const compA = grupo.competidores[0];
+  const compB = grupo.competidores[1];
+
+  const slot = rounds[0][0];
+
+  const ganador = Object.values(grupo.estadoActual?.ganadores || {})[0];
+  const ganadorNombre = typeof ganador === "object" ? ganador?.nombre : ganador;
+
+  return (
+    <div className="bracket-container bracket-horizontal">
+
+      <div className="bracket-header">
+        <h3>Llave - {grupo.grupo || "Sin nombre"}</h3>
+        <small>Combate</small>
+      </div>
+
+      <div className={`vs-fight-container ${ganadorNombre ? "has-winner" : ""}`}>
+
+        <div
+          className={`fighter-card blue ${ganadorNombre === compA.nombre ? "winner" : ""}`}
+          onClick={() => !ganador && handleAdvance(slot, compA.nombre, 0, 0)}
+        >
+          {compA.nombre}
+        </div>
+
+        <div className="vs-text">
+          VS
+        </div>
+
+        <div
+          className={`fighter-card red ${ganadorNombre === compB.nombre ? "winner" : ""}`}
+          onClick={() => !ganador && handleAdvance(slot, compB.nombre, 0, 0)}
+        >
+          {compB.nombre}
+        </div>
+
+        {ganadorNombre && (
+          <div className="bracket-winner-center">
+            🏆 {ganadorNombre}
+          </div>
+        )}
+
+      </div>
+
+    </div>
+  );
+}
 
   // 🏆 Caso especial: solo un competidor → gana automáticamente
 if (grupo.competidores && grupo.competidores.length === 1) {
@@ -346,6 +401,13 @@ if (grupo.competidores && grupo.competidores.length === 1) {
           🏆 GANADOR AUTOMÁTICO
         </text>
       </svg>
+      {grupo.estadoActual?.ganadores && Object.values(grupo.estadoActual.ganadores)[0] && (
+  <div className="bracket-winner-center">
+    🏆 {typeof Object.values(grupo.estadoActual.ganadores)[0] === "object"
+      ? Object.values(grupo.estadoActual.ganadores)[0].nombre
+      : Object.values(grupo.estadoActual.ganadores)[0]}
+  </div>
+)}
     </div>
   );
 }

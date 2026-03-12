@@ -1,114 +1,722 @@
-/* Contenedor principal */
+/* ---------- Fondo de la página ---------- */
+
+body {
+  background-image: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url("/fondo-abstracto.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ---------- Layout principal ---------- */
+
 .min-h-screen {
   min-height: 100vh;
+  padding: 40px 20px;
 }
 
-.bg-gray-50 {
-  background-color: #f9fafb;
+.max-w-7xl {
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* Tarjetas */
-.bg-white {
-  background: white;
-}
+/* ---------- Header ---------- */
+
+
 
 .rounded-lg {
-  border-radius: 0.5rem;
+  border-radius: 16px;
 }
 
 .shadow-md {
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
 }
 
 .shadow-lg {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 40px rgba(0,0,0,.45);
 }
 
-.border {
-  border: 1px solid #e5e7eb;
-}
-
-.border-2 {
-  border-width: 2px;
-}
-
-/* Textos */
-.text-gray-700 {
-  color: #374151;
-}
+/* ---------- Títulos ---------- */
 
 .text-gray-800 {
-  color: #1f2937;
+  color: white;
+}
+
+.text-gray-700 {
+  color: rgba(255,255,255,.9);
 }
 
 .text-gray-500 {
-  color: #6b7280;
+  color: rgba(255,255,255,.6);
 }
 
 .text-yellow-500 {
-  color: #eab308;
+  color: #fbbf24;
 }
 
-/* Espaciado */
-.p-4 { padding: 1rem; }
-.p-6 { padding: 1.5rem; }
-.p-8 { padding: 2rem; }
-.p-3 { padding: .75rem; }
+/* ---------- Espaciado ---------- */
 
-/* Margen */
-.mb-4 { margin-bottom: 1rem; }
-.mb-6 { margin-bottom: 1.5rem; }
+.p-4 { padding: 1rem }
+.p-6 { padding: 1.5rem }
+.p-8 { padding: 2rem }
+.p-3 { padding: .75rem }
 
-/* Botones */
+.mb-4 { margin-bottom: 1rem }
+.mb-6 { margin-bottom: 1.5rem }
+
+/* ---------- Botones ---------- */
+
 button {
   cursor: pointer;
-  transition: background 0.2s ease;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all .25s ease;
 }
 
-.bg-blue-500 { background: #3b82f6; }
-.bg-blue-500:hover { background: #2563eb; }
+/* azul */
 
-.bg-red-500 { background: #ef4444; }
-.bg-red-500:hover { background: #dc2626; }
+.bg-blue-500 {
+  background: #3b82f6;
+  color: white;
+}
 
-.bg-purple-500 { background: #a855f7;}
-.bg-purple-500:hover { background: #9333ea;}
+.bg-blue-500:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
 
-.bg-yellow-500 { background: #eab308; }
-.bg-yellow-500:hover { background: #ca8a04; }
+/* rojo */
 
-.bg-gray-100 { background: #f3f4f6; }
-.bg-gray-200 { background: #e5e7eb; }
+.bg-red-500 {
+  background: #ef4444;
+  color: white;
+}
 
-/* Grids */
+.bg-red-500:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* amarillo */
+
+.bg-yellow-500 {
+  background: #e7b85f;
+  color: black;
+}
+
+.bg-yellow-500:hover {
+  background: #d9a64d;
+  transform: translateY(-2px);
+}
+
+/* ---------- Cards de combates ---------- */
+
+.bg-blue-50 {
+  background: rgba(59,130,246,.15);
+}
+
+.bg-red-50 {
+  background: rgba(239,68,68,.15);
+}
+
+.border-blue-200 {
+  border: 1px solid rgba(59,130,246,.4);
+}
+
+.border-red-200 {
+  border: 1px solid rgba(239,68,68,.4);
+}
+
+.border-gray-200 {
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+/* ---------- Exhibiciones ---------- */
+
+.bg-green-100 {
+  background: rgba(34,197,94,.15);
+}
+
+.border-green-300 {
+  border: 1px solid rgba(34,197,94,.5);
+}
+
+/* ---------- Grid ---------- */
+
 .grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
-
-@media (min-width: 768px) {
-  .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-1 {
+  grid-template-columns: repeat(1,1fr);
 }
 
-@media (min-width: 1024px) {
-  .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+@media (min-width:768px) {
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2,1fr);
+  }
+
 }
 
-/* Animación loader */
+@media (min-width:1100px) {
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+}
+
+/* ---------- Utilidades ---------- */
+
+.flex { display:flex }
+
+.items-center { align-items:center }
+
+.justify-center { justify-content:center }
+
+.justify-between { justify-content:space-between }
+
+.gap-2 { gap:.5rem }
+
+.gap-3 { gap:.75rem }
+
+/* ---------- Loader ---------- */
+
 .animate-spin {
   animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to { transform: rotate(360deg) }
 }
 
-/* Utilidades */
-.flex { display: flex; }
-.items-center { align-items: center; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.gap-2 { gap: .5rem; }
-.gap-3 { gap: .75rem; }
+/* ---------- HEADER PROFESIONAL ---------- */
+
+.header-bracket {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 24px;
+  margin-bottom: 30px;
+
+  background: rgba(20,20,20,0.55);
+  backdrop-filter: blur(10px);
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+
+}
+
+/* título */
+
+.titulo-bracket {
+
+  font-size: 26px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+
+}
+
+/* botones */
+
+.acciones-bracket {
+
+  display: flex;
+  gap: 10px;
+
+}
+
+/* botones header */
+
+.acciones-bracket button {
+
+  padding: 8px 14px;
+
+  font-size: 14px;
+
+}
+
+/* ===== GRID DE COMBATES ===== */
+
+.grid {
+  display: grid;
+  gap: 14px;
+}
+
+/* forzar 3 columnas en desktop */
+@media (min-width: 1024px) {
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+
+}
+
+/* ===== TARJETA DE COMBATE ===== */
+
+.bg-white.rounded-lg.shadow-md.border-2 {
+
+  max-width: 340px;
+  margin: auto;
+
+  font-size: 13px;
+
+}
+
+/* header combate */
+
+.bg-gradient-to-r {
+
+  font-size: 13px;
+  padding: 6px 10px;
+
+}
+
+/* cuerpo combate */
+
+.p-3 {
+
+  padding: 10px;
+
+}
+
+/* competidores */
+
+.bg-blue-50,
+.bg-red-50 {
+
+  padding: 6px;
+
+}
+
+/* nombre competidor */
+
+.font-semibold {
+  font-size: 13px;
+}
+
+/* info competidor */
+
+.text-xs {
+  font-size: 11px;
+}
+
+/* botones ganador */
+
+button.flex-1 {
+
+  font-size: 11px;
+  padding: 4px 6px;
+
+}
+
+/* arreglar ancho del select dentro de tarjetas */
+
+.exhibiciones-container select,
+.border-green-300 select,
+.border-gray-400 select {
+
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+}
+
+/* evita que sobresalga de la card */
+
+.border-green-300,
+.border-gray-400 {
+
+  overflow: hidden;
+
+}
+
+/* ===== TARJETA EXHIBICION ===== */
+
+.border-green-300,
+.border-gray-400 {
+
+  border-radius: 14px;
+  padding: 18px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(10,40,20,0.85),
+    rgba(0,60,30,0.75)
+  );
+
+  backdrop-filter: blur(6px);
+
+  border: 1px solid rgba(0,255,150,0.35);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+
+}
+
+.border-green-300:hover {
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,.45);
+
+}
+
+
+/* ===== TITULO EXHIBICION ===== */
+
+.border-green-300 h4,
+.border-gray-400 h4 {
+
+  font-size: 16px;
+  letter-spacing: .4px;
+
+}
+
+
+/* ===== NOMBRE DEL COMPETIDOR ===== */
+
+.border-green-300 .font-semibold,
+.border-gray-400 .font-semibold {
+
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+
+}
+
+
+/* ===== INFO COMPETIDOR ===== */
+
+.border-green-300 .text-xs,
+.border-gray-400 .text-xs {
+
+  font-size: 12px;
+  color: rgba(255,255,255,.65);
+
+}
+
+
+/* ===== SELECT ESTILIZADO ===== */
+
+.border-green-300 select,
+.border-gray-400 select {
+
+  width: 100%;
+
+  margin-top: 4px;
+
+  padding: 8px 10px;
+
+  border-radius: 8px;
+
+  border: 1px solid rgba(255,255,255,.2);
+
+  background: rgba(0,0,0,.35);
+
+  color: white;
+
+  font-size: 13px;
+
+  transition: border .2s ease, box-shadow .2s ease;
+
+}
+
+.border-green-300 select:focus,
+.border-gray-400 select:focus {
+
+  outline: none;
+
+  border: 1px solid #00ff9c;
+
+  box-shadow: 0 0 6px rgba(0,255,150,.4);
+
+}
+
+
+/* ===== BOTON CONFIRMAR ===== */
+
+.border-green-300 button,
+.border-gray-400 button {
+
+  margin-top: 6px;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+
+  font-weight: 600;
+
+  font-size: 13px;
+
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    #f5c46b,
+    #e5a93d
+  );
+
+  color: #111;
+
+  transition: transform .15s ease, box-shadow .2s ease;
+
+}
+
+.border-green-300 button:hover,
+.border-gray-400 button:hover {
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 12px rgba(0,0,0,.35);
+
+}
+
+
+/* ===== LABEL SELECCIONAR RIVAL ===== */
+
+.border-green-300 label,
+.border-gray-400 label {
+
+  font-size: 13px;
+  font-weight: 500;
+
+  color: rgba(255,255,255,.85);
+
+}
+
+/* ===== PANEL DATOS COMPETIDOR ===== */
+
+.border-green-300 .bg-white,
+.border-gray-400 .bg-white {
+
+  background: linear-gradient(
+    135deg,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.25)
+  );
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  padding: 10px 12px;
+
+  backdrop-filter: blur(4px);
+
+  box-shadow: inset 0 0 8px rgba(0,0,0,.35);
+
+  transition: transform .2s ease;
+  margin-top: 10px;
+
+}
+
+/* efecto hover suave */
+
+.border-green-300 .bg-white:hover {
+
+  transform: translateY(-1px);
+
+}
+
+
+/* nombre competidor */
+
+.border-green-300 .bg-white p:first-child,
+.border-gray-400 .bg-white p:first-child {
+
+  font-size: 17px;
+  font-weight: 700;
+
+  color: #ffffff;
+  
+  margin-bottom: 3px;
+
+}
+
+
+/* escuela y graduacion */
+
+.border-green-300 .bg-white p:nth-child(2),
+.border-gray-400 .bg-white p:nth-child(2) {
+
+  font-size: 12px;
+
+  color: rgba(255,255,255,.75);
+
+}
+
+
+/* datos fisicos */
+
+.border-green-300 .bg-white p:nth-child(3),
+.border-gray-400 .bg-white p:nth-child(3) {
+
+  font-size: 11px;
+
+  color: rgba(255,255,255,.55);
+
+}
+
+/* ===== HEADER PRINCIPAL ===== */
+
+.header-bracket{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:10px 0 20px 0;
+
+}
+
+/* titulo */
+
+
+
+.titulo-bracket h1{
+
+  font-size:40px;
+  font-weight:700;
+
+  letter-spacing:.5px;
+
+  color:white;
+
+  text-shadow:0 2px 10px rgba(0,0,0,.5);
+
+}
+
+/* icono */
+
+.icono-bracket{
+
+  width:28px;
+  height:28px;
+
+  color:#ffd166;
+
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.6));
+
+}
+
+/* contenedor botones */
+
+.acciones-bracket{
+
+  display:flex;
+  gap:12px;
+
+}
+
+/* botones */
+
+.acciones-bracket button{
+
+  display:flex;
+  align-items:center;
+  gap:6px;
+
+  padding:15px 20px;
+
+  border-radius:10px;
+
+  font-weight:600;
+  font-size:13px;
+
+  border:none;
+
+  cursor:pointer;
+
+  background:linear-gradient(
+    135deg,
+    #46b66b,
+    #146d18
+  );
+
+  color:white;
+
+  box-shadow:0 4px 12px rgba(0,0,0,.35);
+
+  transition:all .2s ease;
+
+}
+
+.acciones-bracket button:hover{
+
+  background:linear-gradient(
+    135deg,
+    #2f9a52,
+    #0e4f12
+  );
+
+  transform:translateY(-2px);
+
+  box-shadow:0 8px 18px rgba(0,0,0,.45);
+
+}
+
+/* icono boton */
+
+.acciones-bracket svg{
+
+  width:16px;
+  height:16px;
+
+}
+
+/* eliminar caja del header */
+
+.header-bracket{
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  padding: 10px 0 20px 0;
+
+}
+
+/* icono trofeo header */
+
+.icono-bracket-img{
+
+  width:200px;
+  height:200px;
+
+  object-fit:contain;
+
+  filter:drop-shadow(0 3px 6px rgba(0,0,0,.6));
+
+}
+
+.header-bracket{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:40px;
+
+  padding:0;
+
+  background:none;
+
+  backdrop-filter:none;
+
+  border:none;
+
+  box-shadow:none;
+
+}

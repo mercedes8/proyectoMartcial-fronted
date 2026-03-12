@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { Trophy, User, Swords, AlertCircle, RefreshCw } from 'lucide-react';
+import { Medal, User, Swords, AlertCircle, RefreshCw } from 'lucide-react';
 import "./TournamentBracket.css";
 
 const TournamentBracket = () => {
@@ -337,14 +337,16 @@ const TournamentBracket = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <h1 className="text-3xl font-bold text-gray-800 flex items-center gap-3 mb-4">
-            <Trophy className="w-8 h-8 text-yellow-500" />
-            Brackets de Torneo
-          </h1>
+        <div className="header-bracket">
+  
+  <div className="titulo-bracket">
+    <img src="/trofeo.png" alt="trofeo" className="icono-bracket-img" />
+    <h1>Brackets de Torneo</h1>
+  </div>
+
 
           {/* Botones */}
-          <div className="flex gap-2 mb-4">
+          <div className="acciones-bracket">
             <button
               onClick={handleRegenerar}
               className="px-4 py-2 rounded-lg font-semibold bg-red-500 text-white hover:bg-red-600 transition flex items-center gap-2"

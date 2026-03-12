@@ -1,15 +1,39 @@
-/* BracketDiagram.css - Deportivo Moderno */
+/* BracketDiagram.css - Estilo Marcial */
+
 .bracket-container {
   width: 100%;
   overflow-x: auto;
-  padding: 30px;
-  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-  transform: scale(2.0);
-  transform-origin: center top;
   position: relative;
+
+  background: url("/imagen-versus.avif") center/cover no-repeat;
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  transform: scale(1.2);
+  transform-origin: center top;
+  
+  overflow:hidden;
+
 }
+
+/* overlay leve para que el texto se lea */
+.bracket-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  border-radius: 16px;
+  z-index: 0;
+}
+
+.bracket-container svg,
+.bracket-header {
+  position: relative;
+  z-index: 2;
+}
+
+/* barra superior */
 
 .bracket-container::before {
   content: '';
@@ -18,9 +42,10 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #00d4ff 0%, #ff006e 50%, #00d4ff 100%);
+  background: linear-gradient(90deg,#00d4ff,#ff004c,#00d4ff);
   border-radius: 16px 16px 0 0;
   animation: shimmer 3s infinite linear;
+  z-index: 3;
 }
 
 @keyframes shimmer {
@@ -28,199 +53,644 @@
   100% { background-position: 200% center; }
 }
 
-.bracket-header {
-  text-align: center;
-  margin-bottom: 25px;
-  padding: 15px 25px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+/* HEADER */
+
+.bracket-header{
+  text-align:center;
+  margin-bottom:25px;
+  padding:10px 0;
+
+  background:none;
+  border:none;
+  box-shadow:none;
+  backdrop-filter:none;
 }
 
-.bracket-header h3 {
-  margin: 0 0 8px 0;
-  color: #ffffff;
-  font-size: 1.4em;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+.bracket-header h3{
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-align:center;
+  margin:0;
+
+  color:white;
+
+  /* borde de letra */
+  -webkit-text-stroke: 1px rgba(0,0,0,0.6);
+
+  /* sombra para contraste */
+  text-shadow:
+    0 2px 4px rgba(0,0,0,0.8),
+    0 0 8px rgba(0,0,0,0.6);
 }
 
 .bracket-header small {
-  color: #b0bec5;
-  font-weight: 600;
+  color: #ffffff;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.6);
+
+  /* sombra para contraste */
+  text-shadow:
+    0 2px 4px rgba(0,0,0,0.8),
+    0 0 8px rgba(0,0,0,0.6);
+  
 }
+
+/* EMPTY */
 
 .bracket-empty {
   text-align: center;
   padding: 60px 20px;
   color: #90a4ae;
   font-style: italic;
-  background: rgba(255,255,255,0.03);
+  background: rgba(0,0,0,0.3);
   border-radius: 12px;
   border: 2px dashed rgba(255,255,255,0.1);
 }
 
-/* Slots de Bracket - Estilo Deportivo Premium */
+/* BOX BASE */
+
 .bracket-box {
-  fill: rgba(255, 255, 255, 0.95);
-  stroke: rgba(255, 255, 255, 0.3);
+  fill: rgba(255,255,255,0.95);
+  stroke: rgba(255,255,255,0.3);
   stroke-width: 2;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+  transition: all .25s ease;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  
 }
 
+/* AZUL */
+
 .bracket-box.blue {
-  fill: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  fill: #1a237e;
-  stroke: #00d4ff;
-  stroke-width: 2.5;
+  fill: #0d47a1;
+  stroke: #00e5ff;
+  stroke-width: 3;
 }
+
+/* ROJO */
 
 .bracket-box.red {
   fill: #b71c1c;
-  stroke: #ff006e;
-  stroke-width: 2.5;
+  stroke: #ff1744;
+  stroke-width: 3;
 }
+
+/* HOVER */
+
+.bracket-box.blue:hover,
+.bracket-box.red:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2)
+          drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+}
+
+/* GANADOR */
 
 .bracket-box.winner {
   fill: #1b5e20;
   stroke: #00ff88;
   stroke-width: 4;
-  filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.4)) 
-          drop-shadow(0 4px 16px rgba(0,0,0,0.3));
+
+  filter:
+    drop-shadow(0 0 12px rgba(0,255,136,.5))
+    drop-shadow(0 6px 20px rgba(0,0,0,.5));
+
   animation: winnerPulse 2s ease-in-out infinite;
 }
 
 @keyframes winnerPulse {
-  0%, 100% { 
-    stroke-width: 4;
-    filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.4)) 
-            drop-shadow(0 4px 16px rgba(0,0,0,0.3));
-  }
-  50% { 
-    stroke-width: 5;
-    filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.6)) 
-            drop-shadow(0 6px 20px rgba(0,0,0,0.4));
-  }
+
+  0%,100% { stroke-width:4; }
+
+  50% { stroke-width:5; }
+
 }
+
+/* FINAL */
 
 .bracket-box.final {
   fill: #e65100;
   stroke: #ffd600;
   stroke-width: 4;
-  filter: drop-shadow(0 0 16px rgba(255, 214, 0, 0.5))
-          drop-shadow(0 4px 16px rgba(0,0,0,0.3));
+
+  filter:
+    drop-shadow(0 0 16px rgba(255,214,0,0.6))
+    drop-shadow(0 6px 18px rgba(0,0,0,0.5));
 }
 
-.bracket-box:hover {
-  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.35))
-          brightness(1.15);
-  stroke-width: 3.5;
-  cursor: pointer;
-}
+/* TEXTO */
 
-/* Textos dentro de los slots */
 svg text {
-  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  fill: #ffffff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  pointer-events: none;
+
+  font-family:
+  'Segoe UI',
+  'Roboto',
+  'Arial',
+  sans-serif;
+
+  font-weight:700;
+
+  letter-spacing:.5px;
+
+  fill:#ffffff;
+
+  text-shadow:0 2px 6px rgba(0,0,0,.7);
+
+  pointer-events:none;
+
 }
 
-/* Conectores entre rondas */
+/* CONECTORES */
+
 svg line,
 svg path {
-  stroke: rgba(255, 255, 255, 0.25);
-  stroke-width: 3;
-  stroke-linecap: round;
-  transition: all 0.3s ease;
+
+  stroke:rgba(255,255,255,.25);
+
+  stroke-width:3;
+
+  stroke-linecap:round;
+
+  transition:all .3s ease;
+
 }
 
 svg line:hover,
 svg path:hover {
-  stroke: rgba(0, 212, 255, 0.6);
-  stroke-width: 4;
+
+  stroke:rgba(0,212,255,.7);
+
+  stroke-width:4;
+
 }
 
-/* Headers de columna */
+/* HEADERS */
+
 svg text[text-anchor="middle"] {
-  fill: #ffffff;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 16px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+
+  fill:#ffffff;
+
+  font-weight:900;
+
+  text-transform:uppercase;
+
+  letter-spacing:1.5px;
+
+  font-size:16px;
+
+  text-shadow:0 2px 8px rgba(0,0,0,.7);
+
 }
 
-/* Botón de deshacer (×) */
+/* BOTON DESHACER */
+
 svg circle[fill="#ff4444"] {
-  fill: #d32f2f;
-  filter: drop-shadow(0 2px 6px rgba(211, 47, 47, 0.4));
-  transition: all 0.2s ease;
+
+  fill:#d32f2f;
+
+  filter:drop-shadow(0 2px 6px rgba(211,47,47,.5));
+
+  transition:all .2s ease;
+
 }
 
 svg circle[fill="#ff4444"]:hover {
-  fill: #f44336;
-  filter: drop-shadow(0 4px 12px rgba(244, 67, 54, 0.6));
+
+  fill:#f44336;
+
+  filter:drop-shadow(0 4px 12px rgba(244,67,54,.8));
+
 }
 
-/* Animación para slot actualizado */
-@keyframes slotUpdate {
-  0%, 100% { 
-    stroke-width: 4;
-    stroke-opacity: 0.8;
-  }
-  50% { 
-    stroke-width: 6;
-    stroke-opacity: 1;
-  }
+/* GANADOR CENTRO */
+
+.bracket-winner-center {
+
+  position:absolute;
+
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%,-50%);
+
+  font-size:48px;
+
+  font-weight:900;
+
+  color:#ffd700;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  text-shadow:
+
+    0 0 10px rgba(255,215,0,.8),
+    0 0 20px rgba(255,215,0,.6),
+    0 0 40px rgba(255,215,0,.4);
+
+  animation:winnerReveal .6s ease-out;
+
+  z-index:5;
+
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .bracket-container {
-    padding: 15px;
-    transform: scale(1.5);
+@keyframes winnerReveal {
+
+  from {
+    transform:translate(-50%,-70%) scale(.5);
+    opacity:0;
   }
+
+  to {
+    transform:translate(-50%,-50%) scale(1);
+    opacity:1;
+  }
+
+}
+
+/* RESPONSIVE */
+
+@media (max-width:768px){
+
+.bracket-container{
+padding:15px;
+transform:scale(1.5);
+}
+
+.bracket-header{
+padding:12px 20px;
+
+}
+
+.bracket-header h3{
+font-size:1.1em;
+letter-spacing:1px;
+}
+
+}
+
+@media (max-width:480px){
+
+.bracket-container{
+transform:scale(1.2);
+}
+
+}
+
+.round-column{
+display:flex;
+flex-direction:column;
+gap:25px;
+justify-content:center;
+align-items:center;
+}
+
+/* brillo ganador */
+
+@keyframes glowWinner{
+
+0%,100%{
+filter:drop-shadow(0 0 8px rgba(0,255,136,.4));
+}
+
+50%{
+filter:drop-shadow(0 0 20px rgba(0,255,136,.8));
+}
+
+}
+
+.vs-text {
+  font-size: 90px;
+  font-weight: 900;
+  color: white;
+  opacity: 0.8;
+  animation: vsPulse 1.5s infinite;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #ff0040,
+    0 0 40px #ff0040;
+}
+
+@keyframes vsPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.bracket-box.blue {
+  background: linear-gradient(145deg,#0a2a66,#1446b3);
+  box-shadow:
+    0 0 10px #00d9ff,
+    0 0 20px #00d9ff,
+    inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+.bracket-box.red {
+  background: linear-gradient(145deg,#5c0000,#c00000);
+  box-shadow:
+    0 0 10px #ff003c,
+    0 0 20px #ff003c,
+    inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+.bracket-winner-center {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:60px;
+  font-weight:900;
+  color:#ffd700;
+  animation: winnerKO 0.7s ease-out;
+  text-shadow:
+    0 0 10px #ffd700,
+    0 0 20px #ff9900,
+    0 0 40px #ff9900;
+}
+
+@keyframes winnerKO {
+
+  0% {
+    transform: translate(-50%,-80%) scale(0.3) rotate(-10deg);
+    opacity:0;
+  }
+
+  60% {
+    transform: translate(-50%,-50%) scale(1.2) rotate(5deg);
+  }
+
+  100% {
+    transform: translate(-50%,-50%) scale(1);
+    opacity:1;
+  }
+
+}
+
+.vs-fight-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height:260px;
+  padding:40px;
+  position:relative;
+}
+
+.fighter-card{
+  width:200px;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:18px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.25s;
+  margin-bottom: 180px;
+}
+
+.fighter-card.blue{
+  background:linear-gradient(145deg,#0a2a66,#1446b3);
+  box-shadow:0 0 15px #00d9ff;
+}
+
+.fighter-card.red{
+  background:linear-gradient(145deg,#5c0000,#c00000);
+  box-shadow:0 0 15px #ff003c;
+}
+
+.fighter-card:hover{
+  transform:scale(1.08);
+}
+
+.fighter-card.winner{
+  transform:scale(1.15);
+  box-shadow:0 0 30px gold;
+  text-align: center;
+}
+
+.vs-text{
+  font-size:90px;
+  font-weight:500;
+  color:white;
+  opacity:.8;
+  animation:vsPulse 2.5s infinite;
+  margin-top: -140px;
+  display: none;
+}
+
+@keyframes vsPulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+  100%{transform:scale(1)}
+}
+
+.bracket-winner-center{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:60px;
+  font-weight:900;
+  color:#ffd700;
+}
+
+/* CONTENEDOR COMBATE VS */
+
+.vs-fight-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height:260px;
+  padding:40px;
+  position:relative;
   
-  .bracket-header {
-    padding: 12px 20px;
-  }
-  
-  .bracket-header h3 {
-    font-size: 1.1em;
-    letter-spacing: 1px;
-  }
 }
 
-@media (max-width: 480px) {
-  .bracket-container {
-    transform: scale(1.2);
-  }
+/* TARJETAS LUCHADORES */
+
+
+.fighter-card.blue{
+  transform: translateX(-50px);
 }
 
-.round-column {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  justify-content: center;
-  align-items: center;
+.fighter-card.red{
+  transform: translateX(50px);
 }
 
-/* Efecto de brillo en slots ganadores */
-@keyframes glowWinner {
-  0%, 100% { 
-    filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.3));
+/* AZUL */
+
+.fighter-card.blue{
+  background:linear-gradient(145deg,#0a2a66,#1446b3);
+  box-shadow:
+  0 0 10px #00d9ff,
+  0 0 20px #00d9ff;
+}
+
+/* ROJO */
+
+.fighter-card.red{
+  background:linear-gradient(145deg,#5c0000,#c00000);
+  box-shadow:
+  0 0 10px #ff003c,
+  0 0 20px #ff003c;
+}
+
+/* HOVER */
+
+.fighter-card:hover{
+  transform:scale(1.08);
+}
+
+/* GANADOR */
+
+.fighter-card.winner{
+  transform:scale(1.15);
+  box-shadow:
+  0 0 20px gold,
+  0 0 40px gold;
+}
+
+/* VS ANIMADO */
+
+.vs-text{
+  font-size:90px;
+  font-weight:900;
+  color:rgb(255, 255, 255);
+  opacity:.8;
+  animation:vsPulse 1.5s infinite;
+}
+
+@keyframes vsPulse{
+
+  0%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+  100%{transform:scale(1)}
+
+}
+
+/* GANADOR CENTRO */
+
+.bracket-winner-center{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  font-size:60px;
+  font-weight:900;
+  color:#ffd000;
+  -webkit-text-stroke: 2px rgba(236, 228, 228, 0.75);
+
+
+  text-align:center;
+  pointer-events:none;
+
+  animation:winnerAppear .8s ease-out;
+
+  text-shadow:
+    0 0 6px rgba(255,215,0,.6),
+    0 0 12px rgba(255,215,0,.4),
+    0 0 20px rgba(255,215,0,.3);
+}
+@keyframes winnerAppear{
+
+  0%{
+    opacity:0;
+    transform:translate(-50%,-120%) scale(.5);
+    filter:blur(10px);
   }
-  50% { 
-    filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.6));
+
+  40%{
+    opacity:1;
+    transform:translate(-50%,-60%) scale(1.2);
   }
+
+  70%{
+    transform:translate(-50%,-50%) scale(.9);
+  }
+
+  100%{
+    transform:translate(-50%,-50%) scale(1);
+  }
+
+}
+
+.bracket-winner-center::before{
+
+  content:"";
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  background:radial-gradient(circle,
+    rgba(255,215,0,.45) 0%,
+    rgba(255,215,0,.18) 30%,
+    rgba(255,215,0,0) 70%
+  );
+
+  z-index:-1;
+
+  animation:winnerFlash .8s ease-out;
+}
+@keyframes winnerFlash{
+
+  0%{
+    transform:scale(.2);
+    opacity:0;
+  }
+
+  40%{
+    transform:scale(1.4);
+    opacity:1;
+  }
+
+  100%{
+    transform:scale(1);
+    opacity:.8;
+  }
+
+}
+
+.vs-text {
+  pointer-events: none;
+}
+
+.vs-fight-container {
+  position: relative;
+  z-index: 1;
+}
+
+.fighter-card {
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.bracket-container::before {
+  pointer-events: none;
+}
+
+.fighter-card.winner{
+  transform:scale(1.05);
+  filter:brightness(1.2);
+}
+
+.vs-fight-container.has-winner .fighter-card:not(.winner){
+  filter: grayscale(1) brightness(.45);
+  opacity:.45;
+}
+
+.vs-fight-container.has-winner .fighter-card:not(.winner){
+  filter:grayscale(1) brightness(.5);
+  opacity:.5;
 }
