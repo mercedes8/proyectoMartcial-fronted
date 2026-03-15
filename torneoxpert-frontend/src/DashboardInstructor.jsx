@@ -28,27 +28,48 @@ export default function DashboardInstructor() {
   };
 
   return (
-    <div className="dashboard-container">
-      <h2 className="saludo">👋 Hola, {instructor.nombre}</h2>
 
-      <div className="dashboard-buttons">
-       
-        <button
-          onClick={() => navigate("/validar-competidores")}
-          className="btn-secondary"
-        >
-          ✅ Validar inscripciones
-        </button>
+    <div className="dashboard-page">
+
+      {/* luchador izquierda */}
+      <div className="decoracion-luchador izquierda">
+        <img src="/luchador-izquierdo.png" alt="luchador izquierda"/>
       </div>
 
-      <div className="footer-buttons">
-        <button className="btn-volver" onClick={volverMenu}>
-          🔙 Volver al menú
-        </button>
+      {/* luchador derecha */}
+      <div className="decoracion-luchador derecha">
+        <img src="/luchador-derecho.png" alt="luchador derecha"/>
+      </div>
 
-        <button className="btn-cerrar" onClick={cerrarSesion}>
-          🔒 Cerrar sesión
-        </button>
+      <div className="dashboard-container">
+
+        <h2 className="saludo">
+          👋 Hola, {instructor.nombre}
+        </h2>
+
+        <div className="dashboard-buttons">
+
+          <button
+            onClick={() => navigate("/validar-competidores")}
+            className="btn-secondary"
+          >
+             Validar inscripciones
+          </button>
+
+        </div>
+
+        <div className="footer-buttons">
+
+          <button className="btn-volver" onClick={volverMenu}>
+            🔙 Volver al menú
+          </button>
+
+          <button className="btn-cerrar" onClick={cerrarSesion}>
+            🔒 Cerrar sesión
+          </button>
+
+        </div>
+
       </div>
     </div>
   );

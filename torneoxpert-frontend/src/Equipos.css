@@ -223,3 +223,291 @@
     font-size: 1.2rem;
   }
 }
+
+/* ================================= */
+/* ESTILO OSCURO PARA LISTA EQUIPOS */
+/* ================================= */
+
+/* contenedor principal */
+
+.form-container{
+
+  background: rgba(40,40,40,0.85);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  border-radius: 14px;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+
+}
+
+
+/* titulo */
+
+.form-title{
+
+  color: white;
+
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+
+}
+
+
+/* tarjetas de equipo */
+
+.equipo-card{
+
+  background: rgba(255,255,255,0.05);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+
+  color: white;
+
+}
+
+
+/* hover tarjeta */
+
+.equipo-card:hover{
+
+  transform: translateY(-5px);
+
+  box-shadow: 0 14px 40px rgba(0,0,0,0.6);
+
+}
+
+
+/* nombre equipo */
+
+.equipo-card h3{
+
+  color: white;
+
+}
+
+
+/* info basica */
+
+.equipo-info-basica p{
+
+  color: #d6d9ff;
+
+}
+
+.equipo-info-basica strong{
+
+  color: #ffffff;
+
+}
+
+
+/* secciones internas */
+
+.equipo-seccion{
+
+  background: rgba(255,255,255,0.06);
+
+  border-left: 4px solid #4b4fc7;
+
+}
+
+
+/* lista titulares */
+
+.titulares-lista li{
+
+  background: rgba(255,255,255,0.08);
+
+  border-left: 3px solid #2ecc71;
+
+  color: white;
+
+}
+
+/* titulo secciones dentro de equipo */
+
+.equipo-seccion h4{
+
+  color: #ffffff;
+
+  font-size: 1.1rem;
+
+  font-weight: 600;
+
+  letter-spacing: .3px;
+
+}
+
+/* suplente */
+
+.suplente-info{
+
+  background: rgba(255,255,255,0.08);
+
+  border-left: 3px solid #ff6b6b;
+
+  color: white;
+
+}
+
+
+/* fecha */
+
+.equipo-fecha{
+
+  background: rgba(255,255,255,0.05);
+
+  color: #cfd3ff;
+
+}
+
+
+/* indicador */
+
+.equipo-indicador::before,
+.equipo-indicador::after{
+
+  background: #9b4bff;
+
+}
+
+
+/* mensajes */
+
+.form-container > p{
+
+  color: #d0d4ff;
+
+}
+
+/* texto dentro del suplente */
+
+.suplente-info p{
+
+  color: #ffffff;
+
+  font-weight: 500;
+
+  letter-spacing: .3px;
+
+}
+
+/* =============================== */
+/* LUCHADORES DECORATIVOS */
+/* =============================== */
+
+/* =============================== */
+/* LUCHADORES DECORATIVOS */
+/* =============================== */
+
+.app-contenedor{
+  position: relative;
+  min-height: 100vh;
+}
+
+/* contenedor imagen */
+
+.app-contenedor .decoracion-luchador{
+
+  position: fixed;
+
+  bottom: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+}
+
+
+/* imagen */
+
+.app-contenedor .decoracion-luchador img{
+
+  height: 60vh;
+
+  opacity: 0.9;
+
+}
+
+
+/* =============================== */
+/* POSICION INICIAL */
+/* =============================== */
+
+.app-contenedor .decoracion-luchador.izquierda{
+
+  animation: entrarIzquierda 1.5s ease forwards;
+
+}
+
+.app-contenedor .decoracion-luchador.derecha{
+
+  animation: entrarDerecha 1.5s ease forwards;
+
+}
+
+
+/* =============================== */
+/* ANIMACIONES */
+/* =============================== */
+
+@keyframes entrarIzquierda{
+
+  from{
+
+    left: -400px;
+
+    opacity: 0;
+
+  }
+
+  to{
+
+    left: -120px;
+
+    opacity: 1;
+
+  }
+
+}
+
+
+@keyframes entrarDerecha{
+
+  from{
+
+    right: -500px;
+
+    opacity: 0;
+
+  }
+
+  to{
+
+    right: -120px;
+
+    opacity: 1;
+
+  }
+
+}
+
+
+/* =============================== */
+/* ASEGURA QUE EL CONTENIDO QUEDE ARRIBA */
+/* =============================== */
+
+.form-container{
+
+  position: relative;
+
+  z-index: 1;
+
+}

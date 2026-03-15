@@ -83,3 +83,287 @@ button {
   background-color: #b82e2f;
   transform: scale(1.05);
 }
+
+/* =============================== */
+/* PAGE */
+/* =============================== */
+
+.dashboard-page{
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  position:relative;
+
+}
+
+
+/* =============================== */
+/* PANEL */
+/* =============================== */
+
+.dashboard-container{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:30px;
+
+  width:380px;
+
+  padding:40px 35px;
+
+  background:rgba(60,60,60,0.35);
+
+  backdrop-filter:blur(8px);
+
+  border-radius:14px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:0 10px 40px rgba(0,0,0,.6);
+
+}
+
+
+/* saludo */
+
+.saludo{
+
+  font-size:1.9rem;
+
+  font-weight:600;
+
+  color:white;
+
+}
+
+
+/* botones */
+
+.dashboard-buttons{
+
+  width:100%;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+
+}
+
+
+/* botones footer */
+
+.footer-buttons{
+
+  margin-top:20px;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:15px;
+
+  width:100%;
+
+}
+
+
+/* =============================== */
+/* BOTONES */
+/* =============================== */
+
+.dashboard-container button{
+
+  border:none;
+
+  border-radius:10px;
+
+  padding:14px 20px;
+
+  font-size:1rem;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.25s;
+
+}
+
+
+/* validar */
+
+.btn-secondary{
+
+  background:none;
+
+  border:none;
+
+  color:#f1f4f7;
+
+  font-size:4.0rem;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  padding:5px 10px;
+
+  width:auto;
+
+  align-self:center;
+
+  transition:all .25s;
+
+}
+
+.btn-secondary:hover{
+
+  text-decoration:underline;
+
+  text-underline-offset:6px;
+
+  text-decoration-thickness:2px;
+
+}
+
+
+/* volver */
+
+.btn-volver{
+
+  background:#b3d1ec;
+
+  color:#222;
+
+  padding:8px 14px;
+
+  font-size:.9rem;
+
+  border-radius:8px;
+
+}
+
+.btn-volver:hover{
+
+  background:#e0b65f;
+
+}
+
+
+.btn-cerrar{
+
+  background:#dc2626;
+
+  color:white;
+
+  padding:4px 8px;
+
+  font-size:.9rem;
+
+  border-radius:8px;
+
+}
+
+.btn-cerrar:hover{
+
+  background:#b91c1c;
+
+}
+
+
+/* =============================== */
+/* LUCHADORES */
+/* =============================== */
+
+.decoracion-luchador{
+
+  position:fixed;
+
+  bottom:0;
+
+  pointer-events:none;
+
+  z-index:0;
+
+}
+
+.decoracion-luchador img{
+
+  height:65vh;
+
+  opacity:.9;
+
+}
+
+
+/* izquierda */
+
+.decoracion-luchador.izquierda{
+
+  animation:entrarIzquierda 1.5s ease forwards;
+
+}
+
+.decoracion-luchador.derecha{
+
+  animation:entrarDerecha 1.5s ease forwards;
+
+}
+
+
+@keyframes entrarIzquierda{
+
+  from{
+
+    left:-400px;
+
+    opacity:0;
+
+  }
+
+  to{
+
+    left:-140px;
+
+    opacity:1;
+
+  }
+
+}
+
+
+@keyframes entrarDerecha{
+
+  from{
+
+    right:-400px;
+
+    opacity:0;
+
+  }
+
+  to{
+
+    right:-140px;
+
+    opacity:1;
+
+  }
+
+}
+
+

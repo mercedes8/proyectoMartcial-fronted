@@ -657,3 +657,1330 @@ section {
   margin-bottom: 0.125rem;
   font-size: 0.75rem;
 }
+
+/* ============================= */
+/* LOGIN PAGE */
+/* ============================= */
+
+.login-page{
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  position:relative;
+
+}
+
+
+/* PANEL LOGIN */
+
+.login-panel{
+
+  width:380px;
+
+  background:rgba(40,40,40,0.85);
+
+  backdrop-filter:blur(8px);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:14px;
+
+  padding:30px 28px;
+
+  box-shadow:0 10px 40px rgba(0,0,0,.6);
+
+}
+
+
+/* TITULO */
+
+.login-panel .form-title{
+
+  color:white;
+
+  font-size:2.8rem;
+
+  margin-bottom:20px;
+
+  border-bottom:1px solid rgba(255,255,255,.15);
+
+  padding-bottom:10px;
+
+}
+
+
+/* LABELS */
+
+.login-panel .form-label{
+
+  color:#bbb9b9;
+
+  font-size:1.0rem;
+
+}
+
+
+/* INPUTS */
+
+.login-panel .form-control,
+.login-panel .form-select{
+
+  background:#f3f3f3;
+
+  border-radius:6px;
+
+}
+
+
+/* BOTON LOGIN */
+
+.btn-Instructor{
+
+  width:100%;
+
+  margin-top:15px;
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:8px;
+
+  font-weight:600;
+
+  font-size:1rem;
+
+  background:#22c55e;
+
+  color:white;
+
+  cursor:pointer;
+
+  transition:.25s;
+
+}
+
+.btn-Instructor:hover{
+
+  background:#16a34a;
+
+}
+
+
+/* MENSAJE */
+
+.mensaje{
+
+  margin-top:12px;
+
+  text-align:center;
+
+  color:white;
+
+}
+
+
+/* ============================= */
+/* LUCHADORES DECORATIVOS */
+/* ============================= */
+
+.decoracion-luchador{
+
+  position:fixed;
+
+  bottom:0;
+
+  pointer-events:none;
+
+  z-index:0;
+
+}
+
+.decoracion-luchador img{
+
+  height:65vh;
+
+  opacity:.9;
+
+}
+
+
+/* izquierda */
+
+.decoracion-luchador.izquierda{
+
+  animation:entrarIzquierda 1.5s ease forwards;
+
+}
+
+.decoracion-luchador.derecha{
+
+  animation:entrarDerecha 1.5s ease forwards;
+
+}
+
+
+@keyframes entrarIzquierda{
+
+  from{
+
+    left:-400px;
+
+    opacity:0;
+
+  }
+
+  to{
+
+    left:-140px;
+
+    opacity:1;
+
+  }
+
+}
+
+
+@keyframes entrarDerecha{
+
+  from{
+
+    right:-400px;
+
+    opacity:0;
+
+  }
+
+  to{
+
+    right:-140px;
+
+    opacity:1;
+
+  }
+
+}
+
+.btn-Instructor{
+
+  width:100%;
+
+  margin-top:15px;
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:8px;
+
+  font-weight:600;
+
+  font-size:1rem;
+
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+
+  color:white;
+
+  cursor:pointer;
+
+  transition:.25s;
+
+}
+
+.btn-Instructor:hover{
+
+  background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+  transform:translateY(-1px);
+
+}
+
+/* ===================================== */
+/* FIX LAYOUT REGISTRO */
+/* ===================================== */
+
+/* contenedor principal más grande */
+.form-container{
+
+  max-width:900px;
+
+  margin:auto;
+
+  background:rgba(40,40,40,0.75);
+
+  backdrop-filter:blur(8px);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:16px;
+
+  padding:30px;
+
+  box-shadow:0 10px 40px rgba(0,0,0,.6);
+
+}
+
+
+/* titulo */
+.form-container .form-title{
+
+  color:white;
+
+  font-size:2.4rem;
+
+  margin-bottom:20px;
+
+  border-bottom:1px solid rgba(255,255,255,.15);
+
+  padding-bottom:10px;
+
+}
+
+
+/* labels */
+.form-container .form-label{
+
+  color:#d1d5db;
+
+  font-size:.9rem;
+
+  font-weight:500;
+
+}
+
+
+/* inputs */
+.form-container .form-control,
+.form-container .form-select{
+
+  background:#f3f3f3;
+
+  border-radius:6px;
+
+  height:40px;
+
+  font-size:.9rem;
+
+}
+
+
+/* mejorar grupos */
+.form-container .form-group{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:12px;
+
+  margin-bottom:16px;
+
+}
+
+
+/* campos que ocupan todo el ancho */
+.form-container .input-escuela{
+
+  grid-column:1 / -1;
+
+}
+
+
+/* modalidad */
+.form-container .form-m-e{
+
+  grid-column:1 / -1;
+
+  margin-top:10px;
+
+}
+
+
+/* rol selector */
+.form-container .form-rol{
+
+  background:rgba(255,255,255,.08);
+
+  border-radius:10px;
+
+  padding:15px;
+
+  margin-bottom:20px;
+
+}
+
+
+/* botones rol */
+.form-container .role-buttons-container{
+
+  display:flex;
+
+  gap:10px;
+
+  justify-content:center;
+
+}
+
+
+/* botones rol */
+.form-container .role-button{
+
+  padding:8px 16px;
+
+  border-radius:8px;
+
+  font-size:.9rem;
+
+}
+
+
+/* boton registrar */
+.form-container .btn-primary{
+
+  margin-top:20px;
+
+  height:45px;
+
+  font-size:1rem;
+
+  border-radius:8px;
+
+}
+
+
+/* preview imagen */
+.form-container img{
+
+  border-radius:8px;
+
+}
+
+
+/* scroll mas limpio */
+.form-container::-webkit-scrollbar{
+
+  width:6px;
+
+}
+
+.form-container::-webkit-scrollbar-thumb{
+
+  background:#555;
+
+  border-radius:4px;
+
+}
+
+
+/* ===================================== */
+/* RESPONSIVE */
+/* ===================================== */
+
+@media (max-width:768px){
+
+  .form-container{
+
+    padding:20px;
+
+    max-width:95%;
+
+  }
+
+  .form-container .form-group{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+
+/* ================================================= */
+/* FIX VISUAL FORMULARIO REGISTRO */
+/* PEGAR AL FINAL DE form.css */
+/* ================================================= */
+
+/* contenedor principal del registro */
+.form-container{
+
+  max-width:900px;
+
+  width:100%;
+
+  margin:40px auto;
+
+  padding:30px;
+
+  background:rgba(40,40,40,0.85);
+
+  backdrop-filter:blur(10px);
+
+  border-radius:16px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:0 10px 40px rgba(0,0,0,.6);
+
+  max-height:none;
+
+  overflow:visible;
+
+}
+
+
+/* titulo */
+.form-container .form-title{
+
+  color:white;
+
+  font-size:2.2rem;
+
+  margin-bottom:20px;
+
+  border-bottom:1px solid rgba(255,255,255,.15);
+
+  padding-bottom:10px;
+
+}
+
+
+/* labels */
+.form-container .form-label{
+
+  color:#d1d5db;
+
+  font-size:.9rem;
+
+  font-weight:500;
+
+}
+
+
+/* inputs */
+.form-container .form-control,
+.form-container .form-select{
+
+  background:#f3f3f3;
+
+  border-radius:6px;
+
+  height:40px;
+
+  font-size:.9rem;
+
+}
+
+
+/* organizar campos en 2 columnas */
+.form-container .form-group{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:12px;
+
+  margin-bottom:16px;
+
+}
+
+
+/* campos que ocupan toda la fila */
+.form-container .input-escuela{
+
+  grid-column:1 / -1;
+
+}
+
+.form-container .form-m-e{
+
+  grid-column:1 / -1;
+
+}
+
+
+/* selector de rol */
+.form-container .form-rol{
+
+  background:rgba(255,255,255,.08);
+
+  border-radius:10px;
+
+  padding:15px;
+
+  margin-bottom:20px;
+
+}
+
+
+/* botones de rol */
+.form-container .role-buttons-container{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+}
+
+
+/* botón registrar */
+.form-container .btn-primary{
+
+  margin-top:20px;
+
+  height:45px;
+
+  font-size:1rem;
+
+  border-radius:8px;
+
+}
+
+
+/* imagen preview */
+.form-container img{
+
+  border-radius:8px;
+
+}
+
+
+/* ================================================= */
+/* CONTENEDOR GENERAL */
+/* ================================================= */
+
+main{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:flex-start;
+
+  width:100%;
+
+  max-width:1100px;
+
+  margin:auto;
+
+  padding:40px 20px;
+
+}
+
+
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
+
+@media (max-width:768px){
+
+  .form-container{
+
+    padding:20px;
+
+    max-width:95%;
+
+  }
+
+  .form-container .form-group{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+
+/* ================================= */
+/* FIX COLOR BOTONES ROL REGISTRO */
+/* ================================= */
+
+.form-container .role-button{
+
+  color:#1f2937;   /* texto oscuro */
+
+  background:#e5e7eb;
+
+  font-weight:600;
+
+}
+
+.form-container .role-button:hover{
+
+  background:#d1d5db;
+
+}
+
+.form-container .role-button.role-selected{
+
+  background:#2563eb;
+
+  color:white;
+
+}
+
+/* cuando están deshabilitados */
+.form-container .role-button:disabled{
+
+  color:#6b7280;
+
+  background:#f3f4f6;
+
+}
+
+/* ================================= */
+/* SELECTOR DE ROL - ESTILO PRO */
+/* ================================= */
+
+.form-container .form-rol{
+
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:12px;
+
+  padding:20px;
+
+  margin-bottom:25px;
+
+  text-align:center;
+
+}
+
+
+/* titulo */
+.form-container .form-rol .form-label{
+
+  color:#d1d5db;
+
+  font-size:0.95rem;
+
+  font-weight:600;
+
+  margin-bottom:12px;
+
+  display:block;
+
+}
+
+
+/* contenedor botones */
+.form-container .role-buttons-container{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+}
+
+
+/* botones */
+.form-container .role-button{
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  border-radius:10px;
+
+  padding:10px 18px;
+
+  font-size:0.9rem;
+
+  font-weight:600;
+
+  color:#4369b4;
+
+  cursor:pointer;
+
+  transition:all .2s ease;
+
+}
+
+
+/* hover */
+.form-container .role-button:hover{
+
+  background:rgba(10, 9, 9, 0.15);
+
+  transform:translateY(-1px);
+
+}
+
+
+/* seleccionado */
+.form-container .role-button.role-selected{
+
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+
+  border:1px solid rgba(255,255,255,0.2);
+
+  color:white;
+
+  box-shadow:0 4px 12px rgba(0,0,0,.35);
+
+}
+
+
+/* deshabilitado */
+.form-container .role-button:disabled{
+
+  opacity:0.5;
+
+  cursor:not-allowed;
+
+}
+
+/* =============================== */
+/* FIX FONDO BOTONES DE ROL */
+/* =============================== */
+
+.form-container .role-buttons-container{
+
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:10px;
+
+  padding:8px;
+
+}
+
+
+/* botones individuales */
+
+.form-container .role-button{
+
+  background:rgba(255,255,255,0.08);
+
+  color:#e5e7eb;
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  border-radius:8px;
+
+}
+
+
+/* hover */
+
+.form-container .role-button:hover{
+
+  background:rgba(255,255,255,0.15);
+
+}
+
+
+/* seleccionado */
+
+.form-container .role-button.role-selected{
+
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+
+  color:white;
+
+}
+/* ================================= */
+/* Quitar recuadro contenedor botones rol */
+/* ================================= */
+
+.form-container .role-buttons-container{
+
+  background:transparent;
+
+  border:none;
+
+  padding:0;
+
+}
+
+.form-container .btn-primary{
+
+  display:block;
+
+  margin:25px auto 0;
+
+  width:220px;
+
+  height:45px;
+
+  border-radius:10px;
+
+  font-size:1rem;
+
+}
+
+/* Quitar fondo negro del contenedor */
+main{
+
+  background: transparent;
+
+}
+
+/* ================================= */
+/* AGRANDAR TARJETA REGISTRO */
+/* ================================= */
+
+.form-container{
+
+  max-width:1100px;   /* antes ~900 */
+
+  padding:50px 60px;  /* más espacio interno */
+
+  margin:60px auto;   /* más separación arriba */
+
+}
+
+
+/* agrandar titulo */
+
+.form-container .form-title{
+
+  font-size:2.6rem;
+
+  margin-bottom:30px;
+
+}
+
+
+/* agrandar bloque de selección */
+
+.form-container .form-rol{
+
+  padding:30px;
+
+  margin-top:25px;
+
+}
+
+
+/* botones rol más grandes */
+
+.form-container .role-button{
+
+  padding:14px 26px;
+
+  font-size:1rem;
+
+  border-radius:10px;
+
+}
+
+/* ================================= */
+/* FIX TEXTO INPUTS FORMULARIO */
+/* ================================= */
+
+/* texto dentro de inputs */
+.form-container .form-control,
+.form-container .form-select{
+
+  color:#1f2937;   /* gris oscuro */
+
+}
+
+
+/* placeholder (Nombre, DNI, etc) */
+
+.form-container .form-control::placeholder{
+
+  color:#6b7280;
+
+  opacity:1;
+
+}
+
+
+/* texto de los select */
+
+.form-container .form-select{
+
+  color:#7c7c7c;
+
+}
+
+
+/* opciones desplegable */
+
+.form-container .form-select option{
+
+  color:#ecf0f5;
+
+}
+
+/* ================================= */
+/* BOTONES ACCIONES CREDENCIAL */
+/* ================================= */
+
+.form-container .btn-secondary,
+.form-container button{
+
+  border:none;
+
+  border-radius:10px;
+
+  padding:12px 20px;
+
+  font-size:0.95rem;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:all .25s ease;
+
+}
+
+
+/* Descargar credencial */
+
+.form-container button:nth-of-type(1){
+
+  background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+  color:white;
+
+}
+
+.form-container button:nth-of-type(1):hover{
+
+  transform:translateY(-2px);
+
+  box-shadow:0 6px 14px rgba(0,0,0,.35);
+
+}
+
+
+/* Imprimir credencial */
+
+.form-container button:nth-of-type(2){
+
+  background:linear-gradient(135deg,#16a34a,#15803d);
+
+  color:white;
+
+}
+
+.form-container button:nth-of-type(2):hover{
+
+  transform:translateY(-2px);
+
+  box-shadow:0 6px 14px rgba(0,0,0,.35);
+
+}
+
+
+/* Imprimir dorsal */
+
+.form-container button:nth-of-type(3){
+
+  background:linear-gradient(135deg,#dc2626,#b91c1c);
+
+  color:white;
+
+}
+
+.form-container button:nth-of-type(3):hover{
+
+  transform:translateY(-2px);
+
+  box-shadow:0 6px 14px rgba(0,0,0,.35);
+
+}
+
+
+/* contenedor botones */
+
+.form-container .qr-container,
+.form-container .qr-actions{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:14px;
+
+  margin-top:20px;
+
+  flex-wrap:wrap;
+
+}
+
+
+
+/* ================================= */
+/* TITULO NUEVA INSCRIPCION */
+/* ================================= */
+
+.form-container h2,
+.form-container h3{
+
+  font-size:1.4rem;
+
+  font-weight:600;
+
+  color:#e5e7eb;
+
+  text-align:center;
+
+  margin-top:25px;
+
+  opacity:.9;
+
+}
+
+/* ================================= */
+/* BOTONES CREDENCIAL ESTILO GLASS */
+/* ================================= */
+
+.form-container .qr-actions button,
+.form-container button{
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  color:#e5e7eb;
+
+  border-radius:10px;
+
+  padding:12px 22px;
+
+  font-size:0.95rem;
+
+  font-weight:600;
+
+  transition:all .25s ease;
+
+}
+
+
+/* hover */
+
+.form-container .qr-actions button:hover{
+
+  background:rgba(255,255,255,0.15);
+
+  transform:translateY(-2px);
+
+  box-shadow:0 6px 14px rgba(0,0,0,.35);
+
+}
+
+
+/* separacion entre botones */
+
+.form-container .qr-actions{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:18px;   /* separación */
+
+  margin-top:20px;
+
+  flex-wrap:wrap;
+
+}
+
+
+/* ================================= */
+/* BOTON NUEVA INSCRIPCION */
+/* ================================= */
+
+.form-container .btn-secondary{
+
+  display:block;
+
+  margin:25px auto 0 auto;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  color:#e5e7eb;
+
+  padding:12px 24px;
+
+  border-radius:10px;
+
+  font-weight:600;
+
+}
+
+
+/* ================================= */
+/* SOBRESCRIBIR BOTONES QR CREDENCIAL */
+/* ================================= */
+
+.form-container button{
+
+  background:rgba(255,255,255,0.08) !important;
+
+  border:1px solid rgba(255,255,255,0.15) !important;
+
+  color:#e5e7eb !important;
+
+  border-radius:10px;
+
+  padding:12px 22px;
+
+  font-weight:600;
+
+  transition:all .25s ease;
+  margin-bottom: 25px;
+
+}
+
+
+/* hover */
+
+.form-container button:hover{
+
+  background:rgba(255,255,255,0.15) !important;
+
+  transform:translateY(-2px);
+
+  box-shadow:0 6px 14px rgba(0,0,0,.35);
+
+}
+
+
+/* separación entre botones */
+
+.form-container{
+
+  text-align:center;
+
+}
+
+.form-container button + button{
+
+  margin-left:18px;
+
+}
+
+
+/* botón nueva inscripción */
+
+.form-container .btn-secondary{
+
+  display:block;
+
+  margin:25px auto 0 auto;
+margin-top: 20px;
+}
+
+/* ================================= */
+/* BOTON NUEVA INSCRIPCION AZUL */
+/* ================================= */
+
+.form-container .btn-secondary{
+
+  display:block;
+
+  margin:35px auto 0 auto;
+
+  background:linear-gradient(135deg,#3b82f6,#2563eb) !important;
+
+  color:white !important;
+
+  border:none;
+
+  border-radius:10px;
+
+  padding:12px 24px;
+
+  font-weight:600;
+
+  text-decoration:none;
+  margin-top: 30px;
+
+}
+
+
+/* hover */
+
+.form-container .btn-secondary:hover{
+
+  background:linear-gradient(135deg,#2563eb,#1d4ed8) !important;
+
+  text-decoration:none;
+
+}
+
+/* ================================= */
+/* BOTON ROL SELECCIONADO */
+/* ================================= */
+
+.form-container .role-button.role-selected{
+
+  background:linear-gradient(135deg,#3b82f6,#2563eb) !important;
+
+  color:white !important;
+
+  border:1px solid rgba(255,255,255,0.2);
+
+  box-shadow:0 4px 10px rgba(0,0,0,.35);
+
+}
+
+
+/* hover cuando está seleccionado */
+
+.form-container .role-button.role-selected:hover{
+
+  background:linear-gradient(135deg,#2563eb,#1d4ed8) !important;
+
+}
+
+/* ================================= */
+/* BOTON REGISTRAR AZUL */
+/* ================================= */
+
+.form-container .btn-primary{
+
+  background:linear-gradient(135deg,#3b82f6,#2563eb) !important;
+
+  color:white !important;
+
+  border:none;
+
+  border-radius:10px;
+
+  padding:12px 28px;
+
+  font-weight:600;
+
+  display:block;
+
+  margin:30px auto 0 auto;
+
+}
+
+
+/* hover */
+
+.form-container .btn-primary:hover{
+
+  background:linear-gradient(135deg,#2563eb,#1d4ed8) !important;
+
+  transform:translateY(-1px);
+
+  box-shadow:0 6px 14px rgba(0,0,0,.35);
+
+}

@@ -9,9 +9,7 @@ export default function LoginInstructor() {
   const [mensaje, setMensaje] = useState("");
   const navigate = useNavigate();
 
-
   useEffect(() => {
-    // 🔹 Cargar todos los instructores disponibles
     fetch("/api/escuelas/instructores")
       .then((res) => res.json())
       .then((data) => setInstructores(data))
@@ -41,21 +39,19 @@ export default function LoginInstructor() {
         return;
       }
 
-      // Guardar sesión local
-localStorage.setItem(
-  "instructorSesion",
-  JSON.stringify({
-    nombre: data.nombre,
-    escuela: data.escuela,
-    dni: data.dni,
-    logo: data.logo,
-  })
-);
+      localStorage.setItem(
+        "instructorSesion",
+        JSON.stringify({
+          nombre: data.nombre,
+          escuela: data.escuela,
+          dni: data.dni,
+          logo: data.logo,
+        })
+      );
 
-setMensaje(`✅ Bienvenido ${data.nombre} (${data.escuela})`);
-setTimeout(() => navigate("/dashboard-instructor"), 1500);
+      setMensaje(`✅ Bienvenido ${data.nombre} (${data.escuela})`);
+      setTimeout(() => navigate("/dashboard-instructor"), 1500);
 
-      
     } catch (error) {
       console.error(error);
       setMensaje("❌ Error de conexión con el servidor.");
@@ -63,46 +59,72 @@ setTimeout(() => navigate("/dashboard-instructor"), 1500);
   };
 
   return (
-    <div className="form-container">
-      <h1 className="form-title">Login Instructor</h1>
 
-      <form onSubmit={handleSubmit} className="login-form">
-        <div className="form-group">
-          <label className="form-label">Seleccione su nombre:</label>
-          <select
-            className="form-select"
-            value={nombreSeleccionado}
-            onChange={(e) => setNombreSeleccionado(e.target.value)}
-            required
-          >
-            <option value="">-- Seleccione un instructor --</option>
-            {instructores.map((inst, idx) => (
-              <option key={idx} value={inst.nombre}>
-                {inst.nombre} ({inst.escuela})
-              </option>
-            ))}
-          </select>
-        </div>
+    <div className="login-page">
 
-        <div className="form-group">
-          <label className="form-label">Ingrese su DNI:</label>
-          <input
-            type="password"
-            className="form-control"
-            value={dni}
-            onChange={(e) => setDni(e.target.value)}
-            required
-            placeholder="DNI"
-            pattern="^[0-9]{7,8}$"
-            title="Ingrese un DNI válido de 7 u 8 números"
-          />
-        </div>
-        <button type="submit" className="btn-Instructor">
-          Ingresar
-        </button>
-      </form>
+      {/* luchador izquierda */}
+      <div className="decoracion-luchador izquierda">
+        <img src="/luchador-izquierdo.png" alt="luchador izquierda"/>
+      </div>
 
-      {mensaje && <p className="mensaje">{mensaje}</p>}
+      {/* luchador derecha */}
+      <div className="decoracion-luchador derecha">
+        <img src="/luchador-derecho.png" alt="luchador derecha"/>
+      </div>
+
+
+      <div className="form-container login-panel">
+
+        <h1 className="form-title">Login Instructor</h1>
+
+        <form onSubmit={handleSubmit} className="login-form">
+
+          <div className="form-group">
+            <label className="form-label">Seleccione su nombre:</label>
+
+            <select
+              className="form-select"
+              value={nombreSeleccionado}
+              onChange={(e) => setNombreSeleccionado(e.target.value)}
+              required
+            >
+
+              <option value="">-- Seleccione un instructor --</option>
+
+              {instructores.map((inst, idx) => (
+                <option key={idx} value={inst.nombre}>
+                  {inst.nombre} ({inst.escuela})
+                </option>
+              ))}
+
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label className="form-label">Ingrese su DNI:</label>
+
+            <input
+              type="password"
+              className="form-control"
+              value={dni}
+              onChange={(e) => setDni(e.target.value)}
+              required
+              placeholder="DNI"
+              pattern="^[0-9]{7,8}$"
+              title="Ingrese un DNI válido de 7 u 8 números"
+            />
+          </div>
+
+          <button type="submit" className="btn-Instructor">
+            Ingresar
+          </button>
+
+        </form>
+
+        {mensaje && <p className="mensaje">{mensaje}</p>}
+
+      </div>
+
     </div>
   );
 }
